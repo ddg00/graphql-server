@@ -9,8 +9,8 @@ projects:
     ]
     extensions:
       endpoints:
-        # default: http://localhost:4000
-        default: http://35.239.236.71:4000
+        default: http://prisma:4000
+        # default: http://35.239.236.71:4000
   prisma:
     schemaPath: src/generated/prisma.graphql
     includes: [

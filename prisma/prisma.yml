@@ -1,6 +1,6 @@
 #endpoint: ${env:PRISMA_ENDPOINT}
 #endpoint: http://35.239.236.71:4466/prisma/dev
-endpoint: http://35.239.236.71:4466/prisma/dev
+endpoint: http://prisma:4466/prisma/dev
 
 datamodel: datamodel.graphql
 
