@@ -25,14 +25,14 @@ services:
       MYSQL_ROOT_PASSWORD: prisma
     volumes:
       - mysql:/var/lib/mysql
-  service:
-    image: asia.gcr.io/triplogic-190611/graphqlserver:prototype
-    restart: on-failure
-    ports:
-      - "4000:4000"
-    environment:
-      PRISMA_ENDPOINT: http://prisma:4466/
-      PRISMA_SECRET: mysecret123
-      APP_SECRET: appsecret321
+  # service:
+  #   image: asia.gcr.io/triplogic-190611/graphqlserver:prototype-01
+  #   restart: on-failure
+  #   ports:
+  #     - "4000:4000"
+  #   environment:
+  #     PRISMA_ENDPOINT: http://prisma:4466/
+  #     PRISMA_SECRET: mysecret123
+  #     APP_SECRET: appsecret321
 volumes:
   mysql:

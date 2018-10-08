@@ -1,5 +1,5 @@
-# source: http://localhost:4466
-# timestamp: Sun Oct 07 2018 21:11:50 GMT+0700 (GMT+07:00)
+# source: http://35.239.236.71:4466/prisma/dev
+# timestamp: Mon Oct 08 2018 15:00:19 GMT+0700 (GMT+07:00)
 
 type AggregateUser {
   count: Int!
@@ -75,6 +75,7 @@ type User implements Node {
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String
+  lastName: String
   email: String!
   password: String!
 }
@@ -91,6 +92,7 @@ type UserConnection {
 
 input UserCreateInput {
   name: String
+  lastName: String
   email: String!
   password: String!
 }
@@ -113,6 +115,8 @@ enum UserOrderByInput {
   updatedAt_DESC
   name_ASC
   name_DESC
+  lastName_ASC
+  lastName_DESC
   email_ASC
   email_DESC
   password_ASC
@@ -124,6 +128,7 @@ type UserPreviousValues {
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String
+  lastName: String
   email: String!
   password: String!
 }
@@ -169,6 +174,7 @@ input UserSubscriptionWhereInput {
 
 input UserUpdateInput {
   name: String
+  lastName: String
   email: String
   password: String
 }
@@ -306,6 +312,46 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   name_not_ends_with: String
+  lastName: String
+
+  """All values that are not equal to given value."""
+  lastName_not: String
+
+  """All values that are contained in given list."""
+  lastName_in: [String!]
+
+  """All values that are not contained in given list."""
+  lastName_not_in: [String!]
+
+  """All values less than the given value."""
+  lastName_lt: String
+
+  """All values less than or equal the given value."""
+  lastName_lte: String
+
+  """All values greater than the given value."""
+  lastName_gt: String
+
+  """All values greater than or equal the given value."""
+  lastName_gte: String
+
+  """All values containing the given string."""
+  lastName_contains: String
+
+  """All values not containing the given string."""
+  lastName_not_contains: String
+
+  """All values starting with the given string."""
+  lastName_starts_with: String
+
+  """All values not starting with the given string."""
+  lastName_not_starts_with: String
+
+  """All values ending with the given string."""
+  lastName_ends_with: String
+
+  """All values not ending with the given string."""
+  lastName_not_ends_with: String
   email: String
 
   """All values that are not equal to given value."""

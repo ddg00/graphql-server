@@ -3,6 +3,7 @@ type User {
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String
+  lastName: String
   email: String! @unique
   password: String!
 }
