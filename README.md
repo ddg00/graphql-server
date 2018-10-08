@@ -59,7 +59,7 @@ Inside the Playground, you can start exploring the available operations by brows
 
 ## Testing the API
 
-Check [`queries/booking.graphql`](queries/booking.graphql) and [`queries/queries.graphql`](queries/queries.graphql) to see several example operations you can send to the API. To get an understanding of the booking flows, check the mutations in [`queries/booking.graphql`](queries/booking.graphql).
+Check [`Explore the API`](https://github.com/prisma/prisma-examples/tree/master/typescript-graphql-auth#register-a-new-user-with-the-signup-mutation) 
 
 
 ## License
