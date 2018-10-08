@@ -1,7 +1,5 @@
 # Prototype Graphql Server
 
-This project demonstrates how to build a production-ready application with Prisma and [`graphql-yoga`](https://github.com/graphcool/graphql-yoga). The API provided by the GraphQL server is the foundation for an application similar to [AirBnB](https://www.airbnb.com/).
-
 ## Get started
 
 > **Note**: `prisma` is listed as a _development dependency_ and _script_ in this project's [`package.json`](./package.json). This means you can invoke the Prisma CLI without having it globally installed on your machine (by prefixing it with `yarn`), e.g. `yarn prisma deploy` or `yarn prisma playground`. If you have the Prisma CLI installed globally (which you can do with `npm install -g prisma`), you can omit the `yarn` prefix.

@@ -5,7 +5,7 @@ import { MutationParent } from '../Mutation'
 import { AuthPayloadParent } from '../AuthPayload'
 import { UserParent } from '../User'
 
-import { Context } from './Context'
+import { Context } from './context'
 
 export interface TypeMap extends ITypeMap {
   Context: Context

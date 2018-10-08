@@ -108,6 +108,8 @@ export type UserOrderByInput =
   | "updatedAt_DESC"
   | "name_ASC"
   | "name_DESC"
+  | "lastName_ASC"
+  | "lastName_DESC"
   | "email_ASC"
   | "email_DESC"
   | "password_ASC"
@@ -117,6 +119,7 @@ export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
 export interface UserCreateInput {
   name?: String;
+  lastName?: String;
   email: String;
   password: String;
 }
@@ -166,6 +169,20 @@ export interface UserWhereInput {
   name_not_starts_with?: String;
   name_ends_with?: String;
   name_not_ends_with?: String;
+  lastName?: String;
+  lastName_not?: String;
+  lastName_in?: String[] | String;
+  lastName_not_in?: String[] | String;
+  lastName_lt?: String;
+  lastName_lte?: String;
+  lastName_gt?: String;
+  lastName_gte?: String;
+  lastName_contains?: String;
+  lastName_not_contains?: String;
+  lastName_starts_with?: String;
+  lastName_not_starts_with?: String;
+  lastName_ends_with?: String;
+  lastName_not_ends_with?: String;
   email?: String;
   email_not?: String;
   email_in?: String[] | String;
@@ -201,6 +218,7 @@ export interface UserWhereInput {
 
 export interface UserUpdateInput {
   name?: String;
+  lastName?: String;
   email?: String;
   password?: String;
 }
@@ -246,6 +264,7 @@ export interface UserPreviousValuesNode {
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
   name?: String;
+  lastName?: String;
   email: String;
   password: String;
 }
@@ -257,6 +276,7 @@ export interface UserPreviousValues
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
   name: () => Promise<String>;
+  lastName: () => Promise<String>;
   email: () => Promise<String>;
   password: () => Promise<String>;
 }
@@ -268,6 +288,7 @@ export interface UserPreviousValuesSubscription
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   name: () => Promise<AsyncIterator<String>>;
+  lastName: () => Promise<AsyncIterator<String>>;
   email: () => Promise<AsyncIterator<String>>;
   password: () => Promise<AsyncIterator<String>>;
 }
@@ -316,6 +337,7 @@ export interface UserNode {
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
   name?: String;
+  lastName?: String;
   email: String;
   password: String;
 }
@@ -325,6 +347,7 @@ export interface User extends Promise<UserNode>, Fragmentable {
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
   name: () => Promise<String>;
+  lastName: () => Promise<String>;
   email: () => Promise<String>;
   password: () => Promise<String>;
 }
@@ -336,6 +359,7 @@ export interface UserSubscription
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   name: () => Promise<AsyncIterator<String>>;
+  lastName: () => Promise<AsyncIterator<String>>;
   email: () => Promise<AsyncIterator<String>>;
   password: () => Promise<AsyncIterator<String>>;
 }

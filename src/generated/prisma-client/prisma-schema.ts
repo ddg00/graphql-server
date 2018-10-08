@@ -52,6 +52,7 @@ type User {
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String
+  lastName: String
   email: String!
   password: String!
 }
@@ -64,6 +65,7 @@ type UserConnection {
 
 input UserCreateInput {
   name: String
+  lastName: String
   email: String!
   password: String!
 }
@@ -82,6 +84,8 @@ enum UserOrderByInput {
   updatedAt_DESC
   name_ASC
   name_DESC
+  lastName_ASC
+  lastName_DESC
   email_ASC
   email_DESC
   password_ASC
@@ -93,6 +97,7 @@ type UserPreviousValues {
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String
+  lastName: String
   email: String!
   password: String!
 }
@@ -117,6 +122,7 @@ input UserSubscriptionWhereInput {
 
 input UserUpdateInput {
   name: String
+  lastName: String
   email: String
   password: String
 }
@@ -166,6 +172,20 @@ input UserWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
+  lastName: String
+  lastName_not: String
+  lastName_in: [String!]
+  lastName_not_in: [String!]
+  lastName_lt: String
+  lastName_lte: String
+  lastName_gt: String
+  lastName_gte: String
+  lastName_contains: String
+  lastName_not_contains: String
+  lastName_starts_with: String
+  lastName_not_starts_with: String
+  lastName_ends_with: String
+  lastName_not_ends_with: String
   email: String
   email_not: String
   email_in: [String!]
