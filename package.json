@@ -11,7 +11,9 @@
     "prisma": "prisma",
     "resolver-interfaces": "graphql-resolver-codegen interfaces -s src/schema.graphql -o ./src/generated/resolvers.ts",
     "resolver-scaffold": "graphql-resolver-codegen scaffold -s src/schema.graphql -o ./src/resolvers/ -i ../generated/resolvers",
-    "resolver-codegen": "npm-run-all resolver-interfaces resolver-scaffold"
+    "resolver-codegen": "npm-run-all resolver-interfaces resolver-scaffold",
+    "local:up":"docker-compose up -d",
+    "local:down":"docker-compose down"
   },
   "dependencies": {
     "@types/jsonwebtoken": "^7.2.8",
