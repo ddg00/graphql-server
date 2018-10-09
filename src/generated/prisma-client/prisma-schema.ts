@@ -51,10 +51,11 @@ type User {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  name: String
+  firstName: String
   lastName: String
   email: String!
   password: String!
+  provider: String
 }
 
 type UserConnection {
@@ -64,10 +65,11 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  name: String
+  firstName: String
   lastName: String
   email: String!
   password: String!
+  provider: String
 }
 
 type UserEdge {
@@ -82,24 +84,27 @@ enum UserOrderByInput {
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
-  name_ASC
-  name_DESC
+  firstName_ASC
+  firstName_DESC
   lastName_ASC
   lastName_DESC
   email_ASC
   email_DESC
   password_ASC
   password_DESC
+  provider_ASC
+  provider_DESC
 }
 
 type UserPreviousValues {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  name: String
+  firstName: String
   lastName: String
   email: String!
   password: String!
+  provider: String
 }
 
 type UserSubscriptionPayload {
@@ -121,10 +126,11 @@ input UserSubscriptionWhereInput {
 }
 
 input UserUpdateInput {
-  name: String
+  firstName: String
   lastName: String
   email: String
   password: String
+  provider: String
 }
 
 input UserWhereInput {
@@ -158,20 +164,20 @@ input UserWhereInput {
   updatedAt_lte: DateTime
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
+  firstName: String
+  firstName_not: String
+  firstName_in: [String!]
+  firstName_not_in: [String!]
+  firstName_lt: String
+  firstName_lte: String
+  firstName_gt: String
+  firstName_gte: String
+  firstName_contains: String
+  firstName_not_contains: String
+  firstName_starts_with: String
+  firstName_not_starts_with: String
+  firstName_ends_with: String
+  firstName_not_ends_with: String
   lastName: String
   lastName_not: String
   lastName_in: [String!]
@@ -214,6 +220,20 @@ input UserWhereInput {
   password_not_starts_with: String
   password_ends_with: String
   password_not_ends_with: String
+  provider: String
+  provider_not: String
+  provider_in: [String!]
+  provider_not_in: [String!]
+  provider_lt: String
+  provider_lte: String
+  provider_gt: String
+  provider_gte: String
+  provider_contains: String
+  provider_not_contains: String
+  provider_starts_with: String
+  provider_not_starts_with: String
+  provider_ends_with: String
+  provider_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]

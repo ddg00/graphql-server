@@ -1,4 +1,4 @@
-# Prototype Graphql Server
+# Graphql Auth Service 
 
 ## Get started
 

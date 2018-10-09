@@ -122,10 +122,11 @@ type User implements Node {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  name: String
+  firstName: String
   lastName: String
   email: String!
   password: String!
+  provider: String
 }
 
 """A connection to a list of items."""
@@ -139,10 +140,11 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  name: String
+  firstName: String
   lastName: String
   email: String!
   password: String!
+  provider: String
 }
 
 """An edge in a connection."""
@@ -161,24 +163,27 @@ enum UserOrderByInput {
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
-  name_ASC
-  name_DESC
+  firstName_ASC
+  firstName_DESC
   lastName_ASC
   lastName_DESC
   email_ASC
   email_DESC
   password_ASC
   password_DESC
+  provider_ASC
+  provider_DESC
 }
 
 type UserPreviousValues {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  name: String
+  firstName: String
   lastName: String
   email: String!
   password: String!
+  provider: String
 }
 
 type UserSubscriptionPayload {
@@ -221,10 +226,11 @@ input UserSubscriptionWhereInput {
 }
 
 input UserUpdateInput {
-  name: String
+  firstName: String
   lastName: String
   email: String
   password: String
+  provider: String
 }
 
 input UserWhereInput {
@@ -320,46 +326,46 @@ input UserWhereInput {
 
   """All values greater than or equal the given value."""
   updatedAt_gte: DateTime
-  name: String
+  firstName: String
 
   """All values that are not equal to given value."""
-  name_not: String
+  firstName_not: String
 
   """All values that are contained in given list."""
-  name_in: [String!]
+  firstName_in: [String!]
 
   """All values that are not contained in given list."""
-  name_not_in: [String!]
+  firstName_not_in: [String!]
 
   """All values less than the given value."""
-  name_lt: String
+  firstName_lt: String
 
   """All values less than or equal the given value."""
-  name_lte: String
+  firstName_lte: String
 
   """All values greater than the given value."""
-  name_gt: String
+  firstName_gt: String
 
   """All values greater than or equal the given value."""
-  name_gte: String
+  firstName_gte: String
 
   """All values containing the given string."""
-  name_contains: String
+  firstName_contains: String
 
   """All values not containing the given string."""
-  name_not_contains: String
+  firstName_not_contains: String
 
   """All values starting with the given string."""
-  name_starts_with: String
+  firstName_starts_with: String
 
   """All values not starting with the given string."""
-  name_not_starts_with: String
+  firstName_not_starts_with: String
 
   """All values ending with the given string."""
-  name_ends_with: String
+  firstName_ends_with: String
 
   """All values not ending with the given string."""
-  name_not_ends_with: String
+  firstName_not_ends_with: String
   lastName: String
 
   """All values that are not equal to given value."""
@@ -480,6 +486,46 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   password_not_ends_with: String
+  provider: String
+
+  """All values that are not equal to given value."""
+  provider_not: String
+
+  """All values that are contained in given list."""
+  provider_in: [String!]
+
+  """All values that are not contained in given list."""
+  provider_not_in: [String!]
+
+  """All values less than the given value."""
+  provider_lt: String
+
+  """All values less than or equal the given value."""
+  provider_lte: String
+
+  """All values greater than the given value."""
+  provider_gt: String
+
+  """All values greater than or equal the given value."""
+  provider_gte: String
+
+  """All values containing the given string."""
+  provider_contains: String
+
+  """All values not containing the given string."""
+  provider_not_contains: String
+
+  """All values starting with the given string."""
+  provider_starts_with: String
+
+  """All values not starting with the given string."""
+  provider_not_starts_with: String
+
+  """All values ending with the given string."""
+  provider_ends_with: String
+
+  """All values not ending with the given string."""
+  provider_not_ends_with: String
 }
 
 input UserWhereUniqueInput {
@@ -500,14 +546,16 @@ export type UserOrderByInput =   'id_ASC' |
   'createdAt_DESC' |
   'updatedAt_ASC' |
   'updatedAt_DESC' |
-  'name_ASC' |
-  'name_DESC' |
+  'firstName_ASC' |
+  'firstName_DESC' |
   'lastName_ASC' |
   'lastName_DESC' |
   'email_ASC' |
   'email_DESC' |
   'password_ASC' |
-  'password_DESC'
+  'password_DESC' |
+  'provider_ASC' |
+  'provider_DESC'
 
 export type MutationType =   'CREATED' |
   'UPDATED' |
@@ -519,17 +567,19 @@ export interface UserWhereUniqueInput {
 }
 
 export interface UserCreateInput {
-  name?: String
+  firstName?: String
   lastName?: String
   email: String
   password: String
+  provider?: String
 }
 
 export interface UserUpdateInput {
-  name?: String
+  firstName?: String
   lastName?: String
   email?: String
   password?: String
+  provider?: String
 }
 
 export interface UserSubscriptionWhereInput {
@@ -577,20 +627,20 @@ export interface UserWhereInput {
   updatedAt_lte?: DateTime
   updatedAt_gt?: DateTime
   updatedAt_gte?: DateTime
-  name?: String
-  name_not?: String
-  name_in?: String[] | String
-  name_not_in?: String[] | String
-  name_lt?: String
-  name_lte?: String
-  name_gt?: String
-  name_gte?: String
-  name_contains?: String
-  name_not_contains?: String
-  name_starts_with?: String
-  name_not_starts_with?: String
-  name_ends_with?: String
-  name_not_ends_with?: String
+  firstName?: String
+  firstName_not?: String
+  firstName_in?: String[] | String
+  firstName_not_in?: String[] | String
+  firstName_lt?: String
+  firstName_lte?: String
+  firstName_gt?: String
+  firstName_gte?: String
+  firstName_contains?: String
+  firstName_not_contains?: String
+  firstName_starts_with?: String
+  firstName_not_starts_with?: String
+  firstName_ends_with?: String
+  firstName_not_ends_with?: String
   lastName?: String
   lastName_not?: String
   lastName_in?: String[] | String
@@ -633,6 +683,20 @@ export interface UserWhereInput {
   password_not_starts_with?: String
   password_ends_with?: String
   password_not_ends_with?: String
+  provider?: String
+  provider_not?: String
+  provider_in?: String[] | String
+  provider_not_in?: String[] | String
+  provider_lt?: String
+  provider_lte?: String
+  provider_gt?: String
+  provider_gte?: String
+  provider_contains?: String
+  provider_not_contains?: String
+  provider_starts_with?: String
+  provider_not_starts_with?: String
+  provider_ends_with?: String
+  provider_not_ends_with?: String
 }
 
 /*
@@ -647,10 +711,11 @@ export interface UserPreviousValues {
   id: ID_Output
   createdAt: DateTime
   updatedAt: DateTime
-  name?: String
+  firstName?: String
   lastName?: String
   email: String
   password: String
+  provider?: String
 }
 
 export interface BatchPayload {
@@ -672,10 +737,11 @@ export interface User extends Node {
   id: ID_Output
   createdAt: DateTime
   updatedAt: DateTime
-  name?: String
+  firstName?: String
   lastName?: String
   email: String
   password: String
+  provider?: String
 }
 
 export interface AggregateUser {

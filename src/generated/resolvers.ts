@@ -29,8 +29,10 @@ export namespace QueryResolvers {
 
 export namespace MutationResolvers {
   export interface ArgsSignup {
-    name: string
+    firstName: string
+    lastName: string | null
     email: string
+    provider: string | null
     password: string
   }
 
@@ -115,7 +117,14 @@ export namespace UserResolvers {
     info: GraphQLResolveInfo,
   ) => string | Promise<string>
 
-  export type NameResolver<T extends ITypeMap> = (
+  export type FirstNameResolver<T extends ITypeMap> = (
+    parent: T['UserParent'],
+    args: {},
+    ctx: T['Context'],
+    info: GraphQLResolveInfo,
+  ) => string | null | Promise<string | null>
+
+  export type LastNameResolver<T extends ITypeMap> = (
     parent: T['UserParent'],
     args: {},
     ctx: T['Context'],
@@ -135,7 +144,13 @@ export namespace UserResolvers {
       ctx: T['Context'],
       info: GraphQLResolveInfo,
     ) => string | Promise<string>
-    name: (
+    firstName: (
+      parent: T['UserParent'],
+      args: {},
+      ctx: T['Context'],
+      info: GraphQLResolveInfo,
+    ) => string | null | Promise<string | null>
+    lastName: (
       parent: T['UserParent'],
       args: {},
       ctx: T['Context'],

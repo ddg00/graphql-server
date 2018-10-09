@@ -7,10 +7,11 @@ import { TypeMap } from './types/TypeMap'
 export interface MutationParent {}
 
 export const Mutation: MutationResolvers.Type<TypeMap> = {
-  signup: async (parent, { password, name, email }, ctx) => {
+  signup: async (parent, {firstName, lastName, email, password}, ctx) => {
     const hashedPassword = await hash(password, 10)
     const user = await ctx.db.createUser({
-      name,
+      firstName,
+      lastName,
       email,
       password: hashedPassword,
     })

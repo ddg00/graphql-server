@@ -3,7 +3,7 @@ type Query {
 }
 
 type Mutation {
-  signup(name: String!, email: String!, password: String!): AuthPayload!
+  signup(firstName: String!, lastName: String, email: String!, provider: String, password: String!): AuthPayload!
   login(email: String!, password: String!): AuthPayload!
 }
 
@@ -17,5 +17,6 @@ type AuthPayload {
 type User {
   id: ID!
   email: String!
-  name: String
+  firstName: String
+  lastName: String
 }
